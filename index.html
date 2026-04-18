@@ -2,23 +2,90 @@
 <html>
 <head>
   <title>My Wallet</title>
+
+  <!-- Ethers.js -->
   <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+
+  <!-- STYLE -->
+  <style>
+    body {
+      background: #0f172a;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 12px;
+      margin: 8px;
+      width: 90%;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      padding: 12px;
+      margin: 8px;
+      width: 95%;
+      border-radius: 8px;
+      border: none;
+      background: #22c55e;
+      color: white;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    #address {
+      font-size: 12px;
+      word-break: break-all;
+    }
+  </style>
 </head>
+
 <body>
 
-<h2>My Wallet</h2>
+  <h2>💼 My Crypto Wallet</h2>
 
-<button onclick="createWallet()">Create Wallet</button>
-<button onclick="loadWallet()">Login</button>
+  <!-- AUTH -->
+  <div class="box">
+    <button onclick="createWallet()">Create Wallet</button>
+    <button onclick="loadWallet()">Login</button>
+  </div>
 
-<p>Address: <span id="address"></span></p>
-<p>Balance: <span id="balance"></span></p>
+  <!-- WALLET INFO -->
+  <div class="box">
+    <p><b>Address:</b></p>
+    <p id="address">Not connected</p>
 
-<input id="to" placeholder="Receiver address"><br>
-<input id="amount" placeholder="Amount"><br>
-<button onclick="send()">Send</button>
+    <p><b>Balance:</b></p>
+    <p id="balance">0 ETH</p>
+  </div>
 
-<script src="script.js"></script>
+  <!-- SEND -->
+  <div class="box">
+    <h3>Send</h3>
+    <input id="to" placeholder="Receiver address">
+    <input id="amount" placeholder="Amount (ETH)">
+    <button onclick="send()">Send</button>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
 
 </body>
 </html>
